@@ -52,7 +52,9 @@ Prefer this order (do **not** add legacy theme packs):
 
 Tag pushes (`v*`) pack `.tgz` assets, upload a GitHub Release, and publish to [npmjs](https://www.npmjs.com/).
 
-Repo secret required for npm publish: **`NPM_TOKEN`** — a granular npm access token with publish rights for `@bluemtx/*` and the unscoped `create-bluemtx-*` packages (bypass 2FA enabled for automation). Without it, the GitHub Release tarball step still runs; npm publish fails.
+**Preferred:** [Trusted Publisher (OIDC)](https://docs.npmjs.com/trusted-publishers) on each package → GitHub Actions → org `bluemtx`, repo `storefront-kit`, workflow `release.yml` (allow `npm publish`). The workflow already sets `id-token: write`.
+
+**Fallback:** repo secret **`NPM_TOKEN`** (granular publish token). Can remove after Trusted Publisher is verified on a tag release.
 
 ## Docs
 

@@ -1,5 +1,15 @@
 name: Release packages
 
+# Trigger: push a version tag (v*). Publishes GitHub Release tarballs + npmjs via OIDC.
+# Prerequisite (once per package on npmjs.com → Settings → Trusted Publisher):
+#   Publisher: GitHub Actions
+#   Organization: bluemtx
+#   Repository: storefront-kit
+#   Workflow filename: release.yml
+#   Allowed actions: include npm publish (not stage-only)
+#
+# Requires npm CLI ≥ 11.5.1 and Node ≥ 22.14 (OIDC trusted publishing).
+
 on:
   push:
     tags:
@@ -7,6 +17,7 @@ on:
 
 permissions:
   contents: write
+  id-token: write # OIDC for npm Trusted Publisher
 
 jobs:
   release:
@@ -16,8 +27,12 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           registry-url: 'https://registry.npmjs.org'
+          package-manager-cache: false
+
+      - name: Ensure npm supports OIDC trusted publishing
+        run: npm install -g npm@latest && npm --version
 
       - name: Pack packages
         run: |
@@ -35,6 +50,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      # Auth: OIDC Trusted Publisher (preferred). NPM_TOKEN kept as optional fallback
+      # until Trusted Publisher is configured on all three packages.
       - name: Publish to npmjs
         run: |
           npm publish -w @bluemtx/storefront-sdk --access public
