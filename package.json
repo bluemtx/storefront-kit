@@ -1,0 +1,25 @@
+{
+  "name": "bluemtx-storefront-kit",
+  "private": true,
+  "version": "0.2.2",
+  "description": "BlueMTX headless storefront developer kit (SDK, Nuxt starter, agency CLIs)",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*",
+    "starters/*"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bluemtx/storefront-kit.git"
+  },
+  "homepage": "https://github.com/bluemtx/storefront-kit#readme",
+  "bugs": {
+    "url": "https://github.com/bluemtx/storefront-kit/issues"
+  },
+  "scripts": {
+    "pack:all": "npm pack -w @bluemtx/storefront-sdk && npm pack -w create-bluemtx-storefront && npm pack -w create-bluemtx-extension"
+  }
+}

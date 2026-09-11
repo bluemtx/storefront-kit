@@ -1,0 +1,33 @@
+{
+  "name": "create-bluemtx-storefront",
+  "version": "0.2.2",
+  "description": "Scaffold an external BlueMTX headless storefront (Nuxt) using @bluemtx/storefront-sdk",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "create-bluemtx-storefront": "./bin/create-bluemtx-storefront.js"
+  },
+  "files": [
+    "bin",
+    "template",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bluemtx/storefront-kit.git",
+    "directory": "packages/create-bluemtx-storefront"
+  },
+  "keywords": [
+    "bluemtx",
+    "storefront",
+    "nuxt",
+    "scaffold",
+    "headless"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "create-bluemtx-extension",
+  "version": "0.2.2",
+  "description": "Scaffold a trusted BlueMTX storefront extension (Composition slot package)",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "create-bluemtx-extension": "./bin/create-bluemtx-extension.js"
+  },
+  "files": [
+    "bin",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bluemtx/storefront-kit.git",
+    "directory": "packages/create-bluemtx-extension"
+  },
+  "keywords": [
+    "bluemtx",
+    "storefront",
+    "extension",
+    "composition"
+  ]
+}
