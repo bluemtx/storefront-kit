@@ -1,6 +1,6 @@
 {
   "name": "create-bluemtx-storefront",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Scaffold an external BlueMTX headless storefront (Nuxt) using @bluemtx/storefront-sdk",
   "type": "module",
   "license": "MIT",

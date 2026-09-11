@@ -1,7 +1,7 @@
 {
   "name": "bluemtx-storefront-kit",
   "private": true,
-  "version": "0.2.2",
+  "version": "0.2.5",
   "description": "BlueMTX headless storefront developer kit (SDK, Nuxt starter, agency CLIs)",
   "license": "MIT",
   "workspaces": [

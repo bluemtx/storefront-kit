@@ -434,4 +434,4 @@ export function createStorefrontClient(options) {
   }
 }
 
-export const STOREFRONT_SDK_VERSION = '0.2.4'
+export const STOREFRONT_SDK_VERSION = '0.2.5'

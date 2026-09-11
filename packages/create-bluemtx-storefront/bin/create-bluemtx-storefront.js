@@ -9,7 +9,7 @@ const target = resolve(process.cwd(), targetName)
 const starter = resolve(__dirname, '../template')
 const sdkDep =
   process.env.BLUEMTX_SDK_TGZ
-  || '^0.2.2'
+  || '^0.2.5'
 
 if (existsSync(target)) {
   console.error(`Target already exists: ${target}`)

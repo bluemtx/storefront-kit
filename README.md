@@ -54,7 +54,7 @@ Tag pushes (`v*`) pack `.tgz` assets, upload a GitHub Release, and publish to [n
 
 **Preferred:** [Trusted Publisher (OIDC)](https://docs.npmjs.com/trusted-publishers) on each package → GitHub Actions → org `bluemtx`, repo `storefront-kit`, workflow `release.yml` (allow `npm publish`). The workflow already sets `id-token: write`.
 
-**Fallback:** repo secret **`NPM_TOKEN`** (granular publish token). Can remove after Trusted Publisher is verified on a tag release.
+**Fallback:** repo secret **`OIDC Trusted Publisher only (no NPM_TOKEN in the publish step).
 
 ## Docs
 

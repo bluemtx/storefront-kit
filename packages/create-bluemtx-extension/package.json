@@ -1,6 +1,6 @@
 {
   "name": "create-bluemtx-extension",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Scaffold a trusted BlueMTX storefront extension (Composition slot package)",
   "type": "module",
   "license": "MIT",

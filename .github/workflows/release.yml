@@ -9,6 +9,7 @@ name: Release packages
 #   Allowed actions: include npm publish (not stage-only)
 #
 # Requires npm CLI ≥ 11.5.1 and Node ≥ 22.14 (OIDC trusted publishing).
+# Auth is OIDC only — do not set NODE_AUTH_TOKEN here (that would mask Trusted Publisher failures).
 
 on:
   push:
@@ -50,12 +51,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # Auth: OIDC Trusted Publisher (preferred). NPM_TOKEN kept as optional fallback
-      # until Trusted Publisher is configured on all three packages.
-      - name: Publish to npmjs
+      - name: Publish to npmjs (OIDC Trusted Publisher)
         run: |
           npm publish -w @bluemtx/storefront-sdk --access public
           npm publish -w create-bluemtx-storefront --access public
           npm publish -w create-bluemtx-extension --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
