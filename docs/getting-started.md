@@ -9,9 +9,15 @@
 ## Scaffold a headless storefront
 
 ```bash
-npx --yes https://github.com/bluemtx/storefront-kit/releases/download/v0.2.2/create-bluemtx-storefront-0.2.2.tgz my-store
+npx create-bluemtx-storefront my-store
 cd my-store
 cp .env.example .env
+```
+
+Fallback (GitHub Release tarball):
+
+```bash
+npx --yes https://github.com/bluemtx/storefront-kit/releases/download/v0.2.2/create-bluemtx-storefront-0.2.2.tgz my-store
 ```
 
 Set:
@@ -27,6 +33,12 @@ npm run dev
 ```
 
 ## Use the SDK in an existing app
+
+```bash
+npm install @bluemtx/storefront-sdk
+```
+
+Fallback:
 
 ```bash
 npm install https://github.com/bluemtx/storefront-kit/releases/download/v0.2.2/bluemtx-storefront-sdk-0.2.2.tgz
@@ -47,6 +59,12 @@ const catalog = await client.listCatalog({ limit: 24 })
 ## Composition extensions (standard stores)
 
 For slot packages on Composition-powered stores (not full headless apps):
+
+```bash
+npx create-bluemtx-extension my-extension
+```
+
+Fallback:
 
 ```bash
 npx --yes https://github.com/bluemtx/storefront-kit/releases/download/v0.2.2/create-bluemtx-extension-0.2.2.tgz my-extension

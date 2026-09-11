@@ -7,9 +7,9 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const targetName = process.argv[2] || 'bluemtx-storefront'
 const target = resolve(process.cwd(), targetName)
 const starter = resolve(__dirname, '../template')
-const sdkRelease =
+const sdkDep =
   process.env.BLUEMTX_SDK_TGZ
-  || 'https://github.com/bluemtx/storefront-kit/releases/download/v0.2.2/bluemtx-storefront-sdk-0.2.2.tgz'
+  || '^0.2.2'
 
 if (existsSync(target)) {
   console.error(`Target already exists: ${target}`)
@@ -30,7 +30,7 @@ pkg.name = targetName.replace(/[^a-zA-Z0-9-_]/g, '-').toLowerCase() || 'bluemtx-
 pkg.private = true
 pkg.dependencies = {
   ...(pkg.dependencies || {}),
-  '@bluemtx/storefront-sdk': sdkRelease,
+  '@bluemtx/storefront-sdk': sdkDep,
 }
 writeFileSync(pkgPath, `${JSON.stringify(pkg, null, 2)}\n`)
 

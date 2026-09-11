@@ -14,14 +14,26 @@ The BlueMatrix ERP / Commerce platform monorepo stays **private**. This kit is t
 ## Quick start (headless storefront)
 
 ```bash
-npx --yes https://github.com/bluemtx/storefront-kit/releases/download/v0.2.2/create-bluemtx-storefront-0.2.2.tgz my-store
+npx create-bluemtx-storefront my-store
 cd my-store
 cp .env.example .env   # set NUXT_PUBLIC_STORE_SLUG + Commerce URL
 npm install
 npm run dev
 ```
 
+Fallback (GitHub Release tarball):
+
+```bash
+npx --yes https://github.com/bluemtx/storefront-kit/releases/download/v0.2.2/create-bluemtx-storefront-0.2.2.tgz my-store
+```
+
 ## Install the SDK only
+
+```bash
+npm install @bluemtx/storefront-sdk
+```
+
+Fallback:
 
 ```bash
 npm install https://github.com/bluemtx/storefront-kit/releases/download/v0.2.2/bluemtx-storefront-sdk-0.2.2.tgz
@@ -35,6 +47,12 @@ Prefer this order (do **not** add legacy theme packs):
 2. **Composition** — page templates + blocks (standard stores)
 3. **Trusted extensions** — approved slot packages (`create-bluemtx-extension`)
 4. **Headless** — external app on Cloudflare Workers + this SDK
+
+## Releases / CI
+
+Tag pushes (`v*`) pack `.tgz` assets, upload a GitHub Release, and publish to [npmjs](https://www.npmjs.com/).
+
+Repo secret required for npm publish: **`NPM_TOKEN`** — a granular npm access token with publish rights for `@bluemtx/*` and the unscoped `create-bluemtx-*` packages (bypass 2FA enabled for automation). Without it, the GitHub Release tarball step still runs; npm publish fails.
 
 ## Docs
 

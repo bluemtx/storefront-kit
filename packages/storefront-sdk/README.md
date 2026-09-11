@@ -4,7 +4,11 @@ Typed client for the **BlueMTX Storefront Public API** (`/api/v1/stores/{slug}/*
 
 ## Install
 
-From a [GitHub Release](https://github.com/bluemtx/storefront-kit/releases) tarball (no npm login):
+```bash
+npm install @bluemtx/storefront-sdk
+```
+
+Fallback from a [GitHub Release](https://github.com/bluemtx/storefront-kit/releases) tarball:
 
 ```bash
 npm install https://github.com/bluemtx/storefront-kit/releases/download/v0.2.2/bluemtx-storefront-sdk-0.2.2.tgz
